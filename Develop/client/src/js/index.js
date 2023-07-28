@@ -23,6 +23,17 @@ if (typeof editor === 'undefined') {
   loadSpinner();
 }
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', async () => {
+    try {
+      const registration = await navigator.serviceWorker.register('/src-sw.js'); 
+      console.log('Service Worker registered successfully:', registration);
+    } catch (error) {
+      console.error('Service Worker registration failed:', error);
+    }
+  });
+}
+
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
   // register workbox service worker
