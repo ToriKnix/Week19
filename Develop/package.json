@@ -8,7 +8,7 @@
     "start": "node server.js",
     "server": "node server.js",
     "build": "",
-    "install": "",
+    "install": "install.js",
     "client": "concurrently \"npm run start:dev\" \"npm run start\""
     
   },
